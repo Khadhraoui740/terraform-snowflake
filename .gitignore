@@ -1,0 +1,15 @@
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+tfplan
+*.tfplan
+crash.log
+override.tf
+override.tf.json
+
+# Private keys must never be committed — TERRAFORM_SVC's key goes to a
+# GitHub secret, the bootstrap script documents the manual steps.
+.bootstrap/*.p8
+.bootstrap/*.pub
+.bootstrap/*rsa_key*
