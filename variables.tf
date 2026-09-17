@@ -23,27 +23,9 @@ variable "snowflake_private_key" {
 }
 
 variable "domain_prefix" {
-  description = "Prefix for all Snowflake object names created by this project"
+  description = "Prefix for all Snowflake object names created by this project. Must match the domain_prefix used in terraform-snowflake-rbac, since that project grants USAGE on the integration names derived from it here."
   type        = string
   default     = "DATALAKE"
-}
-
-variable "warehouse_size" {
-  description = "Warehouse size"
-  type        = string
-  default     = "XSMALL"
-}
-
-variable "warehouse_auto_suspend_seconds" {
-  description = "Seconds of inactivity before the warehouse auto-suspends"
-  type        = number
-  default     = 60
-}
-
-variable "service_account_public_key" {
-  description = "RSA public key (base64 body only, no PEM headers) for the DATALAKE_SVC_USER service account. Not sensitive — the matching private key (.bootstrap/svc_rsa_key.p8, kept out of git) is what pipelines/BI tools authenticate with."
-  type        = string
-  default     = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0P+5v3ozX4PwvahgUK/MYNg6+qJEFDRGPXZFw3zVDGcgEx7nJ9dnoCwHXuTyenx4UMbLclgqhFxGFxcXy7iK35PL25fYA2QwZO2Vp1aLmbH9aS6cfTMdhZQMqOOHXJuEenqA/9AutD7Iao9kn3OdaBNHLX7fkw2Fm4YIV7UpqpY/qNb/zcM64ydZkXAm6I0eznRnEhTxcY47uQhTNuUrLDK+4T5ZXuInR8fofJrenIERwT3ifsY2X24/naDkAZIdQOn85CxNsurgJ5/iQ4sZEcT7pqpUatBY+bhg+V8QOO1ZNNiDR1G5UuqQZnlKFeNWEUXjTPIXQuQ9e/XRbkOWuQIDAQAB"
 }
 
 # --- Azure integration (values from terraform-azure's outputs, same
