@@ -1,7 +1,13 @@
-variable "snowflake_account" {
-  description = "Snowflake account identifier (ORG-ACCOUNT)"
+variable "snowflake_organization_name" {
+  description = "Snowflake organization name (from https://app.snowflake.com/<org>/<account>/...)"
   type        = string
-  default     = "SVGSKZY-BN20283"
+  default     = "SVGSKZY"
+}
+
+variable "snowflake_account_name" {
+  description = "Snowflake account name (from https://app.snowflake.com/<org>/<account>/...)"
+  type        = string
+  default     = "BN20283"
 }
 
 variable "snowflake_user" {

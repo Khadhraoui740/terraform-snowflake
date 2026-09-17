@@ -20,9 +20,10 @@ terraform {
 }
 
 provider "snowflake" {
-  account       = var.snowflake_account
-  user          = var.snowflake_user
-  role          = "TERRAFORM_ROLE"
-  authenticator = "SNOWFLAKE_JWT"
-  private_key   = var.snowflake_private_key
+  organization_name = var.snowflake_organization_name
+  account_name      = var.snowflake_account_name
+  user              = var.snowflake_user
+  role              = "TERRAFORM_ROLE"
+  authenticator     = "SNOWFLAKE_JWT"
+  private_key       = var.snowflake_private_key
 }
